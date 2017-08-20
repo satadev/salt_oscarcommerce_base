@@ -1,1 +1,1 @@
-/opt/git/salt_oscarcommerce_base/salt/oscarcommerce_base/README.txt
+salt/oscarcommerce_base/README.txt
