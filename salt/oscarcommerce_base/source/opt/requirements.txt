@@ -22,7 +22,7 @@ django-storages
 django-tinymce4
 enum34
 gunicorn
-ipython
+ipython==5.4.1
 ipython-genutils
 librabbitmq
 packaging
