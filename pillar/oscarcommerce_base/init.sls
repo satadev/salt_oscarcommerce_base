@@ -15,5 +15,7 @@ oscarcommerce_base:
         - postgresql-contrib
         - python-psycopg2
         - nginx
+        - supervisor
+        - virtualenvwrapper
         # - spatialite-bin
         # - gdal-bin

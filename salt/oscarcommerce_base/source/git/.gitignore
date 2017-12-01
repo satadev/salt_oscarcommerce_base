@@ -1,0 +1,10 @@
+{% set project_name = salt['pillar.get']('project_name') %}
+
+.idea
+*.pyc
+*.sock
+db.sqlite3-journal
+log
+
+{{ project_name }}/settings_local.py
+{{ project_name }}/urls_local.py

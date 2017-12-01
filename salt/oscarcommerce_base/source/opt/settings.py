@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+
 {% set project_name = salt['pillar.get']('project_name') %}
 {% set allowed_hosts = salt['pillar.get'](project_name + ':allowed_hosts') %}
 

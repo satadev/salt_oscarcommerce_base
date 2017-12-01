@@ -37,7 +37,7 @@ params_opt:
     cmd.run:
         - cwd: /opt/
         - shell: /bin/bash
-        - user: {{ admin_user }}
+        - runas: {{ admin_user }}
         - name: |
             export WORKON_HOME=$HOME/.virtualenvs
             source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
@@ -133,7 +133,7 @@ params_opt:
     cmd.run:
         - cwd: /opt/{{ project_name }}
         - shell: /bin/bash
-        - user: {{ admin_user }}
+        - runas: {{ admin_user }}
         - name: |
             export WORKON_HOME=$HOME/.virtualenvs
             source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
@@ -146,7 +146,7 @@ params_opt:
     cmd.run:
         - shell: /bin/bash
         - user: {{ admin_user }}
-        - name: mv /opt/{{ project_name }}/static_root/* /opt/{{ project_name }}/static
+        - name: rsync -av /opt/{{ project_name }}/static_root/ /opt/{{ project_name }}/static
         - unless: ls /opt/{{ project_name }}/static/admin
 
 {% endif %}
@@ -159,7 +159,7 @@ params_opt:
     cmd.run:
         - cwd: /opt/{{ project_name }}
         - shell: /bin/bash
-        - user: {{ admin_user }}
+        - runas: {{ admin_user }}
         - name: |
             export WORKON_HOME=$HOME/.virtualenvs
             source /usr/share/virtualenvwrapper/virtualenvwrapper.sh

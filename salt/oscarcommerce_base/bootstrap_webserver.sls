@@ -79,6 +79,7 @@ params_webserver:
         - name: /etc/nginx/sites-enabled/{{ project_name }}
         - target: /etc/nginx/sites-available/{{ project_name }}
 
+{% if grains['id'] == 'kali' %}
 #
 # hosts file
 #
@@ -87,6 +88,7 @@ params_webserver:
         - name: /etc/hosts
         - text: |
             127.0.0.1 {% for item in salt['pillar.get'](project_name + ':nginx:server_name') %}{{ item }} {% endfor %}
+{% endif %}
 
 #
 # restart services / activate
