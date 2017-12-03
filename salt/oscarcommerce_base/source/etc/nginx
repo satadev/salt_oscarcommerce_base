@@ -25,6 +25,9 @@ server {
     location /media/ {
         alias /opt/{{ project_name }}/media/;
     }
+    location /robots.txt {
+        alias /opt/{{ project_name }}/media/robots.txt;
+    }
 
     location / {
         # http://en.wikipedia.org/wiki/X-Forwarded-For
@@ -36,6 +39,8 @@ server {
             proxy_pass http://app_server_{{ project_name }};
             break;
         }
+#       auth_basic "Restricted";
+#       auth_basic_user_file /opt/{{ project_name }}/.htpasswd;
     }
     
 #    error_page 500 502 503 504 /500.html;

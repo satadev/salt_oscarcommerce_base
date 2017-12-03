@@ -60,11 +60,11 @@ params_opt:
 
 # media/ dir
 {{ project_name }}_opt_media:
-    file.directory:
-        - name: /opt/{{ project_name }}/media
+    file.recurse:
+        - source: salt://{{ base_app }}/source/opt/media
+        - name: /opt/{{ project_name }}/media/
         - user: {{ admin_user }}
         - group: {{ admin_user }}
-        - mode: 755
         - unless: ls /opt/{{ project_name }}/media
 
 # static/ dir
