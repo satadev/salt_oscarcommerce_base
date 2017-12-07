@@ -37,7 +37,7 @@ params_opt:
     cmd.run:
         - cwd: /opt/
         - shell: /bin/bash
-        - runas: {{ admin_user }}
+        - user: {{ admin_user }}
         - name: |
             export WORKON_HOME=$HOME/.virtualenvs
             source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
@@ -133,7 +133,7 @@ params_opt:
     cmd.run:
         - cwd: /opt/{{ project_name }}
         - shell: /bin/bash
-        - runas: {{ admin_user }}
+        - user: {{ admin_user }}
         - name: |
             export WORKON_HOME=$HOME/.virtualenvs
             source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
@@ -159,7 +159,7 @@ params_opt:
     cmd.run:
         - cwd: /opt/{{ project_name }}
         - shell: /bin/bash
-        - runas: {{ admin_user }}
+        - user: {{ admin_user }}
         - name: |
             export WORKON_HOME=$HOME/.virtualenvs
             source /usr/share/virtualenvwrapper/virtualenvwrapper.sh

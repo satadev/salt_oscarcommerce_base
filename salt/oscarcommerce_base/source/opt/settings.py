@@ -33,7 +33,7 @@ SECRET_KEY = '$dy76%yq4sv$cnm_nm8!g)n$@qr_q8n$l9g_1gkk83)i1*v+dh'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [{% for host in allowed_hosts %}{% if not loop.first %}, {% endif %}'{{ host }}'{% endfor %}]
+ALLOWED_HOSTS = []
 
 
 # Application definition
